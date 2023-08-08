@@ -35,7 +35,8 @@ const printCarrito = () => {
     <p class= "precioClass2">${cardAutos.precio}$</p>
     `;
         modalConteiner.append(carritoContent);
-    //Eliminar del carrito
+        guardarCarrito()
+        //Eliminar del carrito
         let eliminar = document.createElement("h3");
         eliminar.innerText = "🗑";
         eliminar.className = "eliminarCarrito";
@@ -46,8 +47,9 @@ const printCarrito = () => {
         });
         carritoContent.append(eliminar);
 
-    })
 
+    })
+    guardarCarrito()
     //Suma de las cards ingresadas al carrito
 
     const suma = carrito.reduce((acc, el) => acc + el.precio, 0);
@@ -62,4 +64,8 @@ const printCarrito = () => {
 
 verCarrito.addEventListener('click', printCarrito)
 
+//guardar carrito en localStorage
+const guardarCarrito = () => {
+    localStorage.setItem('carrito', JSON.stringify(carrito))
+}
 

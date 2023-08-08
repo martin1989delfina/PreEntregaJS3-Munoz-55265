@@ -34,8 +34,10 @@ const modalConteiner = document.getElementById("modalConteiner");
 
 //Agregamos con InnerHTML las Cards
 
+                //Pedir al local Storage "carrito"
+let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
-let carrito = [];
+
 listaDeAutos.forEach((cardAutos) => {
     let contenido = document.createElement("li");
     contenido.classList.add("cartasHijo");
