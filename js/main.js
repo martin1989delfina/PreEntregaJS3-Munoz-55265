@@ -77,20 +77,11 @@ listaDeAutos.forEach((cardAutos) => {
 document.addEventListener("keyup", e => {
     if (e.target.matches("#buscador")) {
         const searchTerm = e.target.value.toUpperCase();
-        document.querySelectorAll(".cartasHijo").forEach(auto => {
+        const cartasHijo = document.querySelectorAll(".cartasHijo");
+
+        cartasHijo.forEach(auto => {
             const autoText = auto.textContent.toUpperCase();
-            if (autoText.includes(searchTerm)) {
-                auto.style.display = "block";
-            } else {
-                auto.style.display = "none";
-            }
+            auto.style.display = autoText.includes(searchTerm) ? "block" : "none";
         });
     }
 });
-
-
-
-
-
-
-

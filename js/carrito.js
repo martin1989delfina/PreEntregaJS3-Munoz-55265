@@ -50,6 +50,7 @@ const printCarrito = () => {
 
     })
     guardarCarrito()
+    
     //Suma de las cards ingresadas al carrito
 
     const suma = carrito.reduce((acc, el) => acc + el.precio, 0);
